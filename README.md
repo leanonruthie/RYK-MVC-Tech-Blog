@@ -31,6 +31,8 @@ THEN I am signed out of the site
 
 ## Screenshots
 
+* Preliminary Stages
+<img src="./Assets/Screen%20Shot%202022-10-15%20at%205.39.29%20PM%20(2).png"/>
 
 
 ## Deployed URL
