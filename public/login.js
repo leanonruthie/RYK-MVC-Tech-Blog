@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to my struggle page
-        document.location.replace('/struggle');
+        document.location.replace('/stories');
       } else {
         alert(response.statusText);
       }
@@ -41,7 +41,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/struggle');
+        document.location.replace('/stories');
       } else {
         alert(response.statusText);
       }

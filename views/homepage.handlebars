@@ -1,37 +1,28 @@
-<!-- where the card for each person's coding struggle is and users with accounts can further comment -->
-  <div class="card m-5 p-3 shadow-lg">
-    <div class="card-body">
-      <h3 class="card-title text-center text-primary"><strong>Shared Coding Struggle Story Title</strong></h3>
-      <h5 class="card-subtitle text-center mb-2 text-primary">Written by <span>[Author]</span> on <span>[Date]</span>
-      </h5>
-      <p class="card-text fs-5 text-secondary">Shared Coding Struggle Story Here.</p>
+<!-- preferably nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand">Coding Newbies</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- make sure this doesn't show in landing page but shows once signed in -->
+                    <a class="nav-link" href="/stories">My Coding Struggles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login | Signup</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" id="logout">Logout</a>
+                </li>
+            </ul>
+            <p class="lead text-white pt-3">the.coding.struggle.is.real</p>
+        </div>
     </div>
-    <!-- This is how I want commenting form to look like -->
-    <form id="comment-form">
-      <div class="card m-3 p-3 shadow-lg bg-light">
-        <div class="card-body">
-          <div class="mb-3">
-            <label for="comment-title" class="form-label text-secondary"><strong>Comment Title</strong></label>
-            <input type="text" class="form-control" id="comment-title" placeholder="Comment Title Here">
-          </div>
-          <div class="mb-3">
-            <label for="comment" class="form-label text-secondary"><strong>Comment</strong></label>
-            <textarea class="form-control" id="comment" rows="2" placeholder="Comment Here"></textarea>
-          </div>
-          <button class="bg-primary text-white" id="comment-button">Leave Comment Here</button>
-        </div>
-      </div>
-    </form>
-    <!-- This is how I want the comment section to look like after clicking submit-->
-    <form id="final-comment">
-      <div class="card m-3 p-3 shadow-lg text-secondary bg-secondary" style="--bs-bg-opacity: .20;">
-        <div class="card-body">
-          <p class="card-title"><span id="final-comment-title"><strong>[Final Comment Title]</strong></span> by <span
-              id="final-user">[Final User]</span id="final-date"> on
-            <span>[Final Date]</span>
-          </p>
-          <p class="card-text" id="final-comment">Final Shared Comment Here.</p>
-        </div>
-      </div>
-    </form>
-  </div>
+</nav>

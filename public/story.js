@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/struggle');
+        document.location.replace('/stories');
       } else {
         alert('Failed to share your story!');
       }
@@ -32,7 +32,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/struggle');
+        document.location.replace('/stories');
       } else {
         alert('Failed to delete your old story!');
       }
