@@ -6,8 +6,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Story.findAll({
+    // Get all stories and JOIN with user data
+    const storyData = await Story.findAll({
       include: [
         {
           model: User,
@@ -17,11 +17,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = storyData.map((project) => story.get({ plain: true }));
+    const stories = storyData.map((story) => story.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      stories, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 
 router.get('/story/:id', async (req, res) => {
   try {
-    const projectData = await Story.findByPk(req.params.id, {
+    const storyData = await Story.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -40,7 +40,7 @@ router.get('/story/:id', async (req, res) => {
       ],
     });
 
-    const story = projectData.get({ plain: true });
+    const story = storyData.get({ plain: true });
 
     res.render('story', {
       ...story,
@@ -52,17 +52,17 @@ router.get('/story/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/struggle', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Story }],
     });
 
     const user = userData.get({ plain: true });
 
-    res.render('struggle', {
+    res.render('', {
       ...user,
       logged_in: true
     });

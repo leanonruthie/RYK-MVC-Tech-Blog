@@ -18,7 +18,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/struggle');
       } else {
-        alert('Failed to create project');
+        alert('Failed to share your story!');
       }
     }
   };
@@ -27,23 +27,23 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/stories/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
         document.location.replace('/struggle');
       } else {
-        alert('Failed to delete project');
+        alert('Failed to delete your old story!');
       }
     }
   };
-  
+  // don't forget to add update functionality!!!
   document
-    .querySelector('.new-project-form')
+    .querySelector('#struggle-form')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.project-list')
+    .querySelector('#final-struggle-form')
     .addEventListener('click', delButtonHandler);
   

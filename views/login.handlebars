@@ -1,0 +1,65 @@
+    <!-- Login Section -->
+    <div class="container overflow-hidden">
+        <div class="row gx-5 m-5">
+            <div class="col">
+                <div class="p-3 border rounded-2 shadow-lg">
+                    <!-- This is how I want login form to look like -->
+                    <form id="login-form" style="height:400px">
+                        <div class="card m-3 p-3 shadow-lg bg-light">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h5 class="text-primary">Already have an account? Sign in!</h5>
+                                    <label for="user-login" class="form-label text-secondary"><strong>Your Email Address:</strong></label>
+                                    <input type="email" class="form-control" id="user-login"
+                                        placeholder="user@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="password-login" class="form-label text-secondary"><strong>Your Password:</strong></label>
+                                        <input type="password" class="form-control" id="password-login"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                                <button class="bg-primary text-white" id="login-button">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded-2 shadow-lg">
+                   <!-- This is how I want signup form to look like -->
+                    <form id="signup-form"style="height:400px">
+                        <div class="card m-3 p-3 shadow-lg bg-light">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h5 class="text-primary">Don't have an account? Sign up!</h5>
+                                    <label for="user-signup" class="form-label text-secondary"><strong>Your Email Address:</strong></label>
+                                    <input type="email" class="form-control" id="user-signup"
+                                        placeholder="user@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="password-signup1" class="form-label text-secondary"><strong>Your Password:</strong></label>
+                                        <input type="password" class="form-control" id="password-signup1"
+                                            placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="password-signup2" class="form-label text-secondary"><strong>Confirm Above Password:</strong></label>
+                                        <input type="password" class="form-control" id="password-signup2"
+                                            placeholder="Confirm Password">
+                                    </div>
+                                </div>
+                                <button class="bg-primary text-white" id="signup-button">Signup</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script src="/public/js/login.js"></script>
+     <script src="/public/js/logout.js"></script>
