@@ -1,16 +1,15 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
 [
     {
       "name": "HTML/CSS Struggles",
-      "description": "My Weather Dashboard aesthetics was trash! I was so focused on the Javascript, I could not spruce up the site aesthetically. I will not be able to show the hard work I put into coding if my website looks the way it does right now. It is pretty embarrassing."
+      "description": "Finding balance between aesthetic appeal and functional JS within the given time is tough."
     },
     {
       "name": "Javascript Struggles",
-      "description": "After the Weather Dashboard and the Daily Planner assignments, I thought my struggle with loops, filters, maps were over. I was wrong! I still confuse myself and establish incorrect variables. The only way to beat this is to practice, practice, practice!"
+      "description": "I still confuse myself and establish incorrect variables for for loops/maps/filters. Let's practice, practice, practice!"
     },
     {
       "name": "SQL Struggles",
-      "description": "I always unintentionally create more work for myself! For my Business Plan Personnel Section assignment, I focused on the wrong thing - to bring in all employee names and department names dynamically into a prompt. In turn, I learned the hard way what callback hell was without the use of async and await. If I could redo this assignment, I would not focus on bringing in items dynamically and use questions in prompts utilizing existing manager_id and position_id."
+      "description": "If I could redo my Business Plan Personnel Section assignment, I would use existing manager_id and position_id in my prompt questions."
     }
   ]
   

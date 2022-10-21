@@ -1,16 +1,17 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
 [
-    {
-      "email": "sal@hotmail.com",
-      "password": "password12345"
-    },
-    {
-      "email": "lernantino@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "email": "amiko2k20@aol.com",
-      "password": "password12345"
-    }
-  ]
-  
+  {
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Lernantino",
+    "email": "lernantino@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Amiko",
+    "email": "amiko2k20@aol.com",
+    "password": "password12345"
+  }
+]
