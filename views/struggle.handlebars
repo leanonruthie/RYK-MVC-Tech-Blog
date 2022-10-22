@@ -1,0 +1,40 @@
+<!-- This is how I want my-struggles-page to look like -->
+  <div class="card m-5 p-3 shadow-lg">
+    <div class="card-body">
+      <h3 class="card-title text-center text-primary"><strong>Create Your Fun Coding Newbie Story Here!</strong></h3>
+    </div>
+    <!-- This is how I want create-struggle-form to look like -->
+    <form id="struggle-form">
+      <div class="card m-3 p-3 shadow-lg bg-light">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="struggle-title" class="form-label text-secondary"><strong>Struggle Title</strong></label>
+            <input type="text" class="form-control" id="struggle-title" placeholder="Struggle Title Here">
+          </div>
+          <div class="mb-3">
+            <label for="fun-story" class="form-label text-secondary"><strong>Fun Story</strong></label>
+            <textarea class="form-control" id="fun-story" rows="5" placeholder="Fun Story Here"></textarea>
+          </div>
+          <button class="bg-primary text-white" id="create-button">Create</button>
+        </div>
+      </div>
+    </form>
+    <!-- This is how I want final-struggle-form to look like -->
+    <form id="final-struggle-form">
+      <div class="card m-3 p-3 shadow-lg">
+        <div class="card-body">
+          <div class="mb-3">
+            <h3 class="card-title text-center text-primary" id="final-struggle-title"><strong>Shared Coding Struggle
+                Story Title</strong></h3>
+            <h5 class="card-subtitle text-center mb-2 text-primary">Written by <span
+                id="final-struggle-author">[Author]</span> on <span id="final-struggle-date">[Date]</span>
+            </h5>
+            <p class="card-text fs-5 text-secondary" id="final-struggle-story">Shared Coding Struggle Story Here.</p>
+            <button class="bg-primary text-white" id="update-button">Update</button>
+            <button class="bg-primary text-white" id="delete-button">Delete</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="/js/struggle.js"></script>

@@ -15,8 +15,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the story page
-      document.location.replace('/stories');
+      // If successful, redirect the browser to the struggle page
+      document.location.replace('/struggle');
     } else {
       alert(response.statusText);
     }
@@ -38,7 +38,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/stories');
+      document.location.replace('/struggle');
     } else {
       alert(response.statusText);
     }

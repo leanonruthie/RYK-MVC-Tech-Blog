@@ -10,9 +10,29 @@
 </head>
 
 <body>
-  {{{ body }}}
+  <!-- navbar with respective active navbar link -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <h1 class="text-white">Coding Newbies <span class="lead">the.coding.struggle.is.real</span></h1>
+      {{#if logged_in}}
+      <form class="form-inline">
+        <button class="btn btn-sm text-white" type="button" id="struggle" href="/struggle">My Coding Struggles</button>
+        <button class="btn btn-sm text-white" type="button" id="logout">Logout</button>
+      </form>
+      {{else}}
+      <form class="form-inline">
+        <button class="btn btn-sm text-white" type="button" id="struggle" href="/struggle">My Coding Struggles</button>
+        <button class="btn btn-sm text-white" type="button" id="logout">Logout</button>
+      </form>
+      {{/if}}
+    </div>
+    </div>
+  </nav>
 
-<script src="/js/logout.js"></script>
+  {{{ body }}}
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
 </body>
 
