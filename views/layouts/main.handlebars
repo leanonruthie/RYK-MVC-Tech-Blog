@@ -10,30 +10,21 @@
 </head>
 
 <body>
-  <!-- navbar with respective active navbar link -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">
-      <h1 class="text-white">Coding Newbies <span class="lead">the.coding.struggle.is.real</span></h1>
-      {{#if logged_in}}
-      <form class="form-inline">
-        <button class="btn btn-sm text-white" type="button" id="struggle" href="/struggle">My Coding Struggles</button>
-        <button class="btn btn-sm text-white" type="button" id="logout">Logout</button>
-      </form>
-      {{else}}
-      <form class="form-inline">
-        <button class="btn btn-sm text-white" type="button" id="struggle" href="/struggle">My Coding Struggles</button>
-        <button class="btn btn-sm text-white" type="button" id="logout">Logout</button>
-      </form>
+  <nav class="navbar bg-primary p-3">
+    <h1 class="text-white">Coding Newbies <span class="lead">the.coding.struggle.is.real</span></h1>
+    {{#if logged_in}}
+      <a href="/struggle" class="nav-link text-white">My Coding Struggles</a>
+      <a href="/" class="nav-link text-white">Others Stories</a> 
+      <button class="btn text-white" id="logout">logout</button>
+    {{else}}
+      <a href="/login" class="nav-link text-white">Login</a>
       {{/if}}
-    </div>
-    </div>
+      {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+      {{/if}}
   </nav>
 
   {{{ body }}}
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-
 </body>
 
 </html>
