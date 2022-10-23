@@ -31,9 +31,17 @@ THEN I am signed out of the site
 
 ## Screenshots
 
-* Preliminary Stages
-<img src="./Assets/Screen%20Shot%202022-10-15%20at%205.39.29%20PM%20(2).png"/>
+* Homepage with Comment Functionality (Works with Live Items and Seeded Items)
+<img src="./Assets/home.png"/>
 
+* Login | Signup (Works with Live and Seeded Items)
+<img src="./Assets/Login.png"/>
+
+* Creating and Deleting My Own Stories (Works with Live and Seeded Items)
+<img src="./Assets/codingstruggle.png"/>
+
+* My Story By ID with Update Functionality (Works with Live and Seeded Items)
+<img src="./Assets/storybyid.png"/>
 
 ## Deployed URL
 
