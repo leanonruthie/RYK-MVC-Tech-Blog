@@ -1,0 +1,13 @@
+{{#each stories as |story|}}
+<div class="card m-5 p-3 shadow-lg">
+    <div class="card-body">
+        <h3 class="card-title text-center text-primary">
+            <strong><a href="/stories/{{story.id}}">{{story.name}}</strong></a>
+        </h3>
+        <h5 class="card-subtitle text-center mb-2 text-primary">Written by <span>{{story.user.name}}</span> on
+            <span>{{format_date story.date_created}}</span>
+        </h5>
+        <p class="card-text fs-5 text-secondary">{{story.description}}</p>
+    </div>
+</div>
+{{/each}}
