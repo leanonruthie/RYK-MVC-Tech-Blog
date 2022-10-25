@@ -7,7 +7,7 @@ const newFormHandler = async (event) => {
     const description = document.querySelector('#fun-story').value.trim();
   
     if (name && description) {
-      const response = await fetch(`/api/stories`, {
+      const response = await fetch('/api/stories', {
         method: 'POST',
         body: JSON.stringify({ name, description }),
         headers: {
@@ -38,7 +38,7 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  // don't forget to add update functionality!!!
+  
   document
     .querySelector('#struggle-form')
     .addEventListener('submit', newFormHandler);
