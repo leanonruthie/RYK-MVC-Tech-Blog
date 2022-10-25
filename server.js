@@ -1,4 +1,6 @@
 // Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
+// Don't forget the promised 5 hour cookie session!
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -12,12 +14,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 5,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
