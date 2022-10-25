@@ -2,12 +2,45 @@
 <div class="card m-5 p-3 shadow-lg">
     <div class="card-body">
         <h3 class="card-title text-center text-primary">
-            <strong><a href="/stories/{{story.id}}">{{story.name}}</strong></a>
+            <strong><a href="/story/{{story.id}}">{{story.name}}</strong></a>
         </h3>
-        <h5 class="card-subtitle text-center mb-2 text-primary">Written by <span>{{story.user.name}}</span> on
-            <span>{{format_date story.date_created}}</span>
+        <h5 class="card-subtitle text-center mb-2 text-primary">Written by {{user.name}} on
+            {{format_date story.date_created}}
         </h5>
         <p class="card-text fs-5 text-secondary">{{story.description}}</p>
     </div>
-</div>
 {{/each}}
+        <!-- This is how I want commenting form to look like -->
+    <form id="comment-form">
+      <div class="card m-3 p-3 shadow-lg bg-light">
+        <div class="card-body">
+          <div class="mb-3">
+            <label for="comment-title" class="form-label text-secondary"><strong>Comment Title</strong></label>
+            <input type="text" class="form-control" id="comment-title" placeholder="Comment Title Here">
+          </div>
+          <div class="mb-3">
+            <label for="comment" class="form-label text-secondary"><strong>Comment</strong></label>
+            <textarea class="form-control" id="comment" rows="1" placeholder="Comment Here"></textarea>
+          </div>
+          <button class="bg-primary text-white" id="comment-button">Leave Comment Here</button>
+        </div>
+      </div>
+    </form>
+    <!-- This is how I want the comment section to look like after clicking submit-->
+  {{#if comments.length}}
+    <form id="final-comment">
+      <div class="card m-3 p-3 shadow-lg text-secondary bg-secondary" style="--bs-bg-opacity: .20;">
+        <div class="card-body">
+          {{#each comments as |comment|}}
+          <p class="card-title">{{comment.name}}</strong></span> by {{comment.user.name}} on {{format_date comment.date_created}}
+          </p>
+          <p class="card-text">{{comment.description}}</p>
+        </div>
+         {{/each}}
+      </div>
+    </form>
+    {{/if}}
+  </div>
+</div>
+
+<script src="/js/comment.js"></script>

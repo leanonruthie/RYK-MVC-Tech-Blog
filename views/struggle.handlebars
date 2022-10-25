@@ -27,12 +27,11 @@
       <div class="card-body">
 
         <div class="mb-3">
-          <h3 class="card-title text-center text-primary" id="final-struggle-title"><strong>Shared Coding Struggle
-              Stories Below:</strong></h3>
+          <h3 class="card-title text-center text-primary" id="final-struggle-title"><strong>My Shared Coding Struggle Stories Listed Below:</strong></h3>
           {{#if stories.length}}
           {{#each stories as |story|}}
           <h5 class="card-subtitlemb-2 text-primary">
-            <a href="/story/{{story.id}}">{{story.name}}</a>
+            <a href="/story/{{story.id}}">{{story.name}}</a> written on {{format_date story.date_created}}
           </h5>
           <button class="bg-primary text-white" id="delete-button" data-id="{{story.id}}">Delete</button>
           {{/each}}
