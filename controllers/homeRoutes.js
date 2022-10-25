@@ -1,7 +1,8 @@
 // Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
+// Don't forget to add Comment functionality!
 
 const router = require('express').Router();
-const { Story, User } = require('../models');
+const { Comment, Story, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -15,14 +16,10 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
-    // Serialize data so the template can read it
     const stories = storyData.map((story) => story.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      stories, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      stories,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -37,11 +34,12 @@ router.get('/story/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model: Comment,
+        }
       ],
     });
-
     const story = storyData.get({ plain: true });
-
     res.render('story', {
       ...story,
       logged_in: req.session.logged_in
@@ -51,17 +49,13 @@ router.get('/story/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
 router.get('/struggle', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Story }],
     });
-
     const user = userData.get({ plain: true });
-
     res.render('struggle', {
       ...user,
       logged_in: true
@@ -72,13 +66,21 @@ router.get('/struggle', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/struggle');
     return;
   }
-
   res.render('login');
 });
+
+router.get('/update/:id', async (req, res) => {
+  const updateData = await Story.findByPk(req.params.id)
+  const update = updateData.get({ plain: true })
+  console.log(update);
+  res.render('updateStory', {
+    ...update,
+    logged_in: req.session.logged_in
+  })
+})
 
 module.exports = router;

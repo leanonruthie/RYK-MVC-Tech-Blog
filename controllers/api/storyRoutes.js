@@ -1,4 +1,5 @@
 // Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
+// Don't forget the router.put for update functionality!
 
 const router = require('express').Router();
 const { Story } = require('../../models');
@@ -35,6 +36,26 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.put('/:id', withAuth, (req, res) => {
+  Story.update(
+    {
+      name: req.body.name,
+      description: req.body.description,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updateStory) => {
+      res.status(200).json(updateStory);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
