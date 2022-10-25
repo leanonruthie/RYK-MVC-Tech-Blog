@@ -21,19 +21,9 @@ const newFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/stories/${id}`, {
-      method: 'DELETE',
-    });
-    if (response.ok) {
-      document.location.replace('/struggle');
-    } else {
-      alert('Failed to delete your old story!');
-    }
-  }
-};
+document
+  .querySelector('#struggle-form')
+  .addEventListener('submit', newFormHandler);
 
 const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -49,14 +39,25 @@ const updateButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('#struggle-form')
-  .addEventListener('submit', newFormHandler);
-
-document
-  .querySelector('#final-struggle-form')
-  .addEventListener('click', delButtonHandler);
 
 document
   .querySelector('#final-update-form')
   .addEventListener('click', updateButtonHandler);
+
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    const response = await fetch(`/api/stories/${id}`, {
+      method: 'DELETE',
+    });
+    if (response.ok) {
+      document.location.replace('/struggle');
+    } else {
+      alert('Failed to update your old story!');
+    }
+  }
+};
+document
+  .querySelector('#final-struggle-form')
+  .addEventListener('click', delButtonHandler);
+

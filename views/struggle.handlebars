@@ -1,32 +1,40 @@
 <!-- This is how I want my-struggles-page to look like -->
 <div class="card m-5 p-3 shadow-lg">
   <div class="card-body">
-    <h3 class="card-title text-center text-primary"><strong>Welcome, Newbie {{name}}!<br>Create Your Funny Coding Newbie Story Here!</strong></h3>
+    <h3 class="card-title text-center text-primary"><strong>Welcome, Newbie {{name}}!<br>
+        Create Your Funny Coding Newbie Story Here!</strong></h3>
   </div>
   <!-- This is how I want create-struggle-form to look like -->
   <form id="struggle-form">
     <div class="card m-3 p-3 shadow-lg bg-light">
       <div class="card-body">
         <div class="mb-3">
-          <label for="struggle-title" class="form-label text-secondary"><strong>Struggle Title</strong></label>
+          <label for="struggle-title" class="form-label text-secondary">
+            <strong>Struggle Title</strong>
+          </label>
           <input type="text" class="form-control" id="struggle-title" placeholder="Struggle Title Here">
         </div>
         <div class="mb-3">
-          <label for="fun-story" class="form-label text-secondary"><strong>My Funny Coding Mistakes</strong></label>
+          <label for="fun-story" class="form-label text-secondary">
+            <strong>My Funny Coding Mistakes</strong>
+          </label>
           <textarea class="form-control" id="fun-story" rows="2"
-            placeholder="Please keep your story short and sweet. Thank you!"></textarea>
+            placeholder="Please keep your story short and sweet. Thank you!">
+            </textarea>
         </div>
         <button class="bg-primary text-white" id="create-button">Create</button>
       </div>
     </div>
   </form>
   <!-- This is how I want final-struggle-form to look like -->
-{{#if stories.length}}
+  {{#if stories.length}}
   <form id="final-struggle-form">
     <div class="card m-3 p-3 shadow-lg">
       <div class="card-body">
         <div class="mb-3">
-          <h3 class="card-title text-primary" id="final-struggle-title"><strong>My Shared Coding Struggle Stories Listed Below:</strong></h3>
+          <h3 class="card-title text-primary" id="final-struggle-title">
+            <strong>My Shared Coding Struggle Stories Listed Below:</strong>
+          </h3>
           {{#each stories as |story|}}
           <h5 class="card-subtitlemb-2 text-primary my-1">
             <a href="/story/{{story.id}}">{{story.name}}</a> written on {{format_date story.date_created}}
@@ -37,6 +45,30 @@
       </div>
     </div>
   </form>
+  {{/if}}
+
+  <!-- This is how I want final-update-form to look like -->
+  {{#if stories.length}}
+  {{#each stories as |story|}}
+  <form id="final-update-form">
+    <div class="card m-3 p-3 shadow-lg bg-light">
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="update-title" class="form-label text-secondary">
+            <strong>Update My Struggle Title</strong></label>
+          <input type="text" class="form-control" id="update-title" value="{{story.name}}">
+        </div>
+        <div class="mb-3">
+          <label for="update-story" class="form-label text-secondary">
+            <strong>Update My Funny Coding Mistakes</strong>
+          </label>
+          <input type="text" class="form-control" id="pdate-story" value="{{story.description}}">
+        </div>
+        <button class="bg-primary text-white" id="update-button" data-id="{{story.id}}">Update My Story</button>
+      </div>
+    </div>
+  </form>
+  {{/each}}
   {{/if}}
 </div>
 <script src="/js/struggle.js"></script>
