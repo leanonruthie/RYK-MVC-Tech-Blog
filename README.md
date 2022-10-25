@@ -35,12 +35,12 @@ THEN I am signed out of the site
 <img src="./Assets/home.png"/>
 
 * Login | Signup (Works with Live and Seeded Items)
-<img src="./Assets/Login.png"/>
+<img src="./Assets/login.png"/>
 
-* Creating and Deleting My Own Stories (Works with Live and Seeded Items)
+* Creating, Updating and Deleting My Own Stories (Works with Live and Seeded Items)
 <img src="./Assets/codingstruggle.png"/>
 
-* My Story By ID with Update Functionality (Works with Live and Seeded Items)
+* My Story by ID with Update Functionality (Works with Live and Seeded Items)
 <img src="./Assets/storybyid.png"/>
 
 ## Deployed URL
