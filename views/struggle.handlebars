@@ -22,19 +22,17 @@
     </div>
   </form>
   <!-- This is how I want final-struggle-form to look like -->
-
+{{#if stories.length}}
   <form id="final-struggle-form">
     <div class="card m-3 p-3 shadow-lg">
       <div class="card-body">
-
         <div class="mb-3">
-          <h3 class="card-title text-center text-primary" id="final-struggle-title"><strong>My Shared Coding Struggle Stories Listed Below:</strong></h3>
-          {{#if stories.length}}
+          <h3 class="card-title text-primary" id="final-struggle-title"><strong>My Shared Coding Struggle Stories Listed Below:</strong></h3>
           {{#each stories as |story|}}
-          <h5 class="card-subtitlemb-2 text-primary">
+          <h5 class="card-subtitlemb-2 text-primary my-1">
             <a href="/story/{{story.id}}">{{story.name}}</a> written on {{format_date story.date_created}}
           </h5>
-          <button class="bg-primary text-white" id="delete-button" data-id="{{story.id}}">Delete</button>
+          <button class="bg-primary text-white my-1" id="delete-button" data-id="{{story.id}}">Delete</button>
           {{/each}}
         </div>
       </div>
