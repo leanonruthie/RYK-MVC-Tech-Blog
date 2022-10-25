@@ -1,7 +1,14 @@
 [
-    {
-      "name": "HTML/CSS Struggles",
-      "description": "Finding balance between aesthetic appeal and functional JS within the given time is tough."
-    }
-  ]
-  
+  {
+    "name": "HTML/CSS Struggles",
+    "description": "Finding balance between aesthetic appeal and functional JS within the given time is tough."
+  },
+  {
+    "name": "Javascript Struggles",
+    "description": "I still confuse myself and establish incorrect variables for for loops/maps/filters. Let's practice, practice, practice!"
+  },
+  {
+    "name": "SQL Struggles",
+    "description": "If I could redo my Business Plan Personnel Section assignment, I would use existing manager_id and position_id in my prompt questions."
+  }
+]
