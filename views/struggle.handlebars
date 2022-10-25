@@ -18,9 +18,8 @@
           <label for="fun-story" class="form-label text-secondary">
             <strong>My Funny Coding Mistakes</strong>
           </label>
-          <textarea class="form-control" id="fun-story" rows="2"
-            placeholder="Please keep your story short and sweet. Thank you!">
-            </textarea>
+          <input type="text" class="form-control" id="fun-story" rows="2" placeholder="Please keep your story short and sweet. Thank you!">
+            </input>
         </div>
         <button class="bg-primary text-white" id="create-button">Create</button>
       </div>
@@ -49,9 +48,9 @@
 
   <!-- This is how I want final-update-form to look like -->
   {{#if stories.length}}
-  {{#each stories as |story|}}
   <form id="final-update-form">
     <div class="card m-3 p-3 shadow-lg bg-light">
+      {{#each stories as |story|}}
       <div class="card-body">
         <div class="mb-3">
           <label for="update-title" class="form-label text-secondary">
@@ -62,13 +61,14 @@
           <label for="update-story" class="form-label text-secondary">
             <strong>Update My Funny Coding Mistakes</strong>
           </label>
-          <input type="text" class="form-control" id="pdate-story" value="{{story.description}}">
+          <input type="text" class="form-control" id="update-story" value="{{story.description}}">
         </div>
         <button class="bg-primary text-white" id="update-button" data-id="{{story.id}}">Update My Story</button>
       </div>
+      {{/each}}
     </div>
   </form>
-  {{/each}}
+
   {{/if}}
 </div>
 <script src="/js/struggle.js"></script>

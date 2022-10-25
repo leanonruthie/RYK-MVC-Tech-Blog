@@ -4,11 +4,11 @@
  const newCommentHandler = async (event) => {
   if(event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/comments/${id}`, {
+    const response = await fetch(`/api/comment/${id}`, {
       method: 'POST',
     });
     if (response.ok) {
-      document.location.replace(`/comments/${id}`);
+      document.location.replace(`/comment/${id}`);
     } else {
       alert('Failed to share your comment!');
     }
@@ -17,4 +17,4 @@
 
 document
   .querySelector('#comment-form')
-  .addEventListener('submit', newCommentHandler);
+  .addEventListener('click', newCommentHandler);
