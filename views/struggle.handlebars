@@ -45,10 +45,9 @@
     </div>
   </form>
   {{/if}}
-
   <!-- This is how I want final-update-form to look like -->
   {{#if stories.length}}
-  <form id="final-update-form">
+  <form class="final-update-form" data-id="{{story.id}}">
     <div class="card m-3 p-3 shadow-lg bg-light">
       {{#each stories as |story|}}
       <div class="card-body">
@@ -63,12 +62,11 @@
           </label>
           <input type="text" class="form-control" id="update-story" value="{{story.description}}">
         </div>
-        <button class="bg-primary text-white" id="update-button" data-id="{{story.id}}">Update My Story</button>
+        <button class="bg-primary text-white" id="update-button">Update My Story</button>
       </div>
       {{/each}}
     </div>
   </form>
-
   {{/if}}
 </div>
 <script src="/js/struggle.js"></script>

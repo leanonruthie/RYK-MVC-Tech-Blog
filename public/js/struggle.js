@@ -25,25 +25,40 @@ document
   .querySelector('#struggle-form')
   .addEventListener('submit', newFormHandler);
 
-const updateButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/update/${id}`, {
-      method: 'PUT',
-    });
-    if (response.ok) {
-      document.location.replace(`/update/${id}`);
-    } else {
-      alert('Failed to update your old story!');
+
+  const updateFormHandler = async (event) => {
+    event.preventDefault();
+    if(event.target.hasAttribute('data-id')) {
+      console.log("event:", event);
+      console.log("event.target:", event.target);
+      const name = event.target.querySelector("#update-title").value.trim();
+      const description = event.target.querySelector("#update-story").value.trim();
+      
+      const id = event.target.getAttribute('data-id');
+      console.log("id", id, "name", name, "description", description);
+      
+      const response = await fetch(`/api/story/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          id,
+          name,
+          description
+        }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response.ok) {
+        document.location.replace(`/stories/${id}`);
+      } else {
+        alert('Failed to update your old story!');
+      }
     }
-  }
-};
+  };
 
-
-document
-  .querySelector('#final-update-form')
-  .addEventListener('click', updateButtonHandler);
-
+  document
+  .querySelectorAll('.final-update-form').forEach(updateBtn=>{
+    updateBtn.addEventListener('submit', updateFormHandler)
+  });
+  
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -57,6 +72,7 @@ const delButtonHandler = async (event) => {
     }
   }
 };
+
 document
   .querySelector('#final-struggle-form')
   .addEventListener('click', delButtonHandler);

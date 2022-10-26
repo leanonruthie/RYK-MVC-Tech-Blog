@@ -10,7 +10,7 @@
     <p class="card-text fs-5 text-secondary">{{story.description}}</p>
   </div>
   <!-- This is how I want commenting form to look like -->
-  <form id="comment-form" data-id="{{story.id}}">
+  <form class="comment-form" data-id="{{story.id}}">
     <div class="card m-3 p-3 shadow-lg bg-light">
       <div class="card-body">
         <div class="mb-3">
@@ -27,13 +27,14 @@
   </form>
   <!-- This is how I want the comment section to look like after clicking submit-->
   {{#if comments.length}}
+{{log comments}}
   <form id="final-comment">
     <div class="card m-3 p-3 shadow-lg text-secondary bg-secondary" style="--bs-bg-opacity: .20;">
       {{#each comments as |comment|}}
       <div class="card-body">
         <h5 class="card-title text-primary"><strong>My Response to the Story:</strong></h5>
         <h3 class="card-title text-primary">
-          {{comment.name}}</a> written on {{format_date comment.date_created}} by {{comment.user.name}}
+          {{comment.name}}</a> written on {{format_date comment.date_created}} by User_Id {{comment.user_id}}
         </h3>
         <p class="card-text">{{comment.description}}</p>
       </div>
