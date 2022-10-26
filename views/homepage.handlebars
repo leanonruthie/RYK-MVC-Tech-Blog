@@ -10,18 +10,18 @@
     <p class="card-text fs-5 text-secondary">{{story.description}}</p>
   </div>
   <!-- This is how I want commenting form to look like -->
-  <form id="comment-form">
+  <form id="comment-form" data-id="{{story.id}}">
     <div class="card m-3 p-3 shadow-lg bg-light">
       <div class="card-body">
         <div class="mb-3">
           <label for="comment-title" class="form-label text-secondary"><strong>Comment Title</strong></label>
-          <input type="text" class="form-control" id="comment-title" placeholder="Comment Title Here">
+          <input type="text" class="comment-title form-control" placeholder="Comment Title Here">
         </div>
         <div class="mb-3">
           <label for="comment" class="form-label text-secondary"><strong>Comment</strong></label>
-          <textarea class="form-control" id="comment" rows="1" placeholder="Comment Here"></textarea>
+          <input type="text" class="comment form-control" placeholder="Comment Here"></input>
         </div>
-        <button class="bg-primary text-white" id="comment-button" data-id="{{comment.id}}">Leave Comment Here</button>
+        <button class="bg-primary text-white" id="comment-button">Leave Comment Here</button>
       </div>
     </div>
   </form>

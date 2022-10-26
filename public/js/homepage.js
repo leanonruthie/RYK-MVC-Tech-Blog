@@ -2,13 +2,27 @@
  // don't forget to add comment functionality!!!
 
  const newCommentHandler = async (event) => {
+  event.preventDefault();
   if(event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/comment/${id}`, {
+    // console.log("event:", event);
+    // console.log("event.target:", event.target);
+    const name = event.target.querySelector(".comment-title").value.trim();
+    const description = event.target.querySelector(".comment").value.trim();
+    
+    const story_id = event.target.getAttribute('data-id');
+    console.log("name", name, "description", description, "story_id", story_id);
+    
+    const response = await fetch('/api/comments', {
       method: 'POST',
+      body: JSON.stringify({
+        name,
+        description,
+        story_id
+      }),
+      headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace(`/comment/${id}`);
+      // document.location.replace(`/comment/${id}`);
     } else {
       alert('Failed to share your comment!');
     }
@@ -17,4 +31,4 @@
 
 document
   .querySelector('#comment-form')
-  .addEventListener('click', newCommentHandler);
+  .addEventListener('submit', newCommentHandler);
