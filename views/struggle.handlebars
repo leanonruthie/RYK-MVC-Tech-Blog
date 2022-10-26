@@ -45,28 +45,5 @@
     </div>
   </form>
   {{/if}}
-  <!-- This is how I want final-update-form to look like -->
-  {{#if stories.length}}
-  <form class="final-update-form" data-id="{{story.id}}">
-    <div class="card m-3 p-3 shadow-lg bg-light">
-      {{#each stories as |story|}}
-      <div class="card-body">
-        <div class="mb-3">
-          <label for="update-title" class="form-label text-secondary">
-            <strong>Update My Struggle Title</strong></label>
-          <input type="text" class="form-control" id="update-title" value="{{story.name}}">
-        </div>
-        <div class="mb-3">
-          <label for="update-story" class="form-label text-secondary">
-            <strong>Update My Funny Coding Mistakes</strong>
-          </label>
-          <input type="text" class="form-control" id="update-story" value="{{story.description}}">
-        </div>
-        <button class="bg-primary text-white" id="update-button">Update My Story</button>
-      </div>
-      {{/each}}
-    </div>
-  </form>
-  {{/if}}
 </div>
 <script src="/js/struggle.js"></script>

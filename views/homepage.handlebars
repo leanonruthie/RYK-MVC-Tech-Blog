@@ -32,10 +32,10 @@
     <div class="card m-3 p-3 shadow-lg text-secondary bg-secondary" style="--bs-bg-opacity: .20;">
       {{#each comments as |comment|}}
       <div class="card-body">
-        <h5 class="card-title text-primary"><strong>My Response to the Story:</strong></h5>
-        <h3 class="card-title text-primary">
-          {{comment.name}}</a> written on {{format_date comment.date_created}} by User_Id {{comment.user_id}}
-        </h3>
+        <h5 class="card-title text-primary"><strong>Comment to the Story:</strong></h5>
+        <h6 class="card-title text-primary">
+          {{comment.name}}</a> written by User_Id {{comment.user_id}} on {{format_date comment.date_created}} 
+        </h6>
         <p class="card-text">{{comment.description}}</p>
       </div>
       {{/each}}

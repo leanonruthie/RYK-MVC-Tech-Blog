@@ -6,7 +6,6 @@ const { Comment, Story, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  console.log("HIT ME BABY ONE MORE TIEM")
   try {
     const storyData = await Story.findAll({
       include: [
@@ -20,7 +19,7 @@ router.get('/', async (req, res) => {
       ],
     });
     const stories = storyData.map((story) => story.get({ plain: true }));
-    console.log("stories", stories);
+    // console.log("stories", stories);
     res.render('homepage', {
       stories,
       logged_in: req.session.logged_in
@@ -81,7 +80,7 @@ router.get('/login', (req, res) => {
 router.put('/story/:id', async (req, res) => {
   const updateData = await Story.findByPk(req.params.id)
   const update = updateData.get({ plain: true })
-  console.log(update);
+  // console.log(update);
   res.render('story', {
     ...update,
     logged_in: req.session.logged_in

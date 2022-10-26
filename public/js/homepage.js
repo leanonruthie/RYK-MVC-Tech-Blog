@@ -1,19 +1,18 @@
 // Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
-// don't forget to add comment functionality!!!
-console.log("connected")
+
+// Lesson learned from Tutoring / Office Hours - it's always best to use classes for repetitive forms/inputs/buttons without glitches; the below newCommentHandler took so many attempts until I received the proper guidance in Office Hours and Tutoring
+
 const newCommentHandler = async (event) => {
   event.preventDefault();
 
-console.log("CLICK EM")
-
   if (event.target.hasAttribute('data-id')) {
-    console.log("event:", event);
-    console.log("event.target:", event.target);
+    // console.log("event:", event);
+    // console.log("event.target:", event.target);
     const name = event.target.querySelector(".comment-title").value.trim();
     const description = event.target.querySelector(".comment").value.trim();
 
     const story_id = event.target.getAttribute('data-id');
-    console.log("name", name, "description", description, "story_id", story_id);
+    // console.log("name", name, "description", description, "story_id", story_id);
 
     const response = await fetch('/api/comments', {
       method: 'POST',

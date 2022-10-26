@@ -26,6 +26,7 @@ THEN I am signed out of the site
 ```
 ## Work References
 
+* Office Hours and Free Tutoring
 * RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
 * Our Group Project #2: https://enigmatic-gorge-61389.herokuapp.com/
 
