@@ -28,7 +28,11 @@ THEN I am signed out of the site
 
 * Office Hours and Free Tutoring
 * RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
+* Previous Assignment: https://github.com/leanonruthie/ORM-Sequelize-Express-E-Commerce.git 
 * Our Group Project #2: https://enigmatic-gorge-61389.herokuapp.com/
+
+## CSS Framework
+Bootstrap inline-script utilized in handlebars to save time and convenience
 
 ## Screenshots
 

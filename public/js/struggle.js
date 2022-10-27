@@ -1,7 +1,5 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
-// Don't forget update functionality for each storyById
-
-// Lesson learned from Tutoring / Office Hours - it's always best to use classes for repetitive forms/inputs/buttons without glitches; the only reason the form handlers in this particular instance work smoothly because the respective data-id is assigned to the delete and update buttons
+// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
+// Lesson Learned from Office Hours and Tutoring: the use of data-id properly saves a lot of time as seen in the delButtonHandlebar found in student project but it must be tweaked properly with other methods such as PUT and POST as seen in other Handlers in homepage.js and story.js
 
 const newFormHandler = async (event) => {
   event.preventDefault();
@@ -36,7 +34,7 @@ const delButtonHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/struggle');
     } else {
-      alert('Failed to update your old story!');
+      alert('Failed to delete your old story!');
     }
   }
 };

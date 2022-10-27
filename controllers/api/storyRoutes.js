@@ -1,5 +1,5 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
-// Don't forget the router.put for update functionality!
+// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
+// Lesson Learned - Update functionality was quite difficult mainly because I wanted to be clever and tried to use the mini-project data-id method. I went to tutoring so that my awesome tutor could point out that I continually made simply mistakes fetching and replacing incorrect routes - for further comments, see story.js in public and below router.put addition
 
 const router = require('express').Router();
 const { Story } = require('../../models');
@@ -15,6 +15,26 @@ router.post('/', withAuth, async (req, res) => {
     res.status(200).json(newStory);
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const updateStoryDataById = await Story.update({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!updateStoryDataById) {
+      res.status(404).json({ message: 'No story found with this id!' });
+      return;
+    }
+
+    res.status(200).json(updateStoryDataById);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
@@ -36,26 +56,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
-
-router.put('/:id', withAuth, (req, res) => {
-  Story.update(
-    {
-      name: req.body.name,
-      description: req.body.description,
-    },
-    {
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
-    .then((updateStory) => {
-      res.status(200).json(updateStory);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
 });
 
 module.exports = router;

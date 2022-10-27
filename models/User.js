@@ -1,4 +1,5 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
+// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
+// Reminder: We were practicing this for several weeks now and the bcrypt is crucial in protecting user privacy in terms of safely creating/preserving passwords
 
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');

@@ -1,5 +1,5 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
-// Don't forget the deployment (JAWSDB_URL for Heroku)
+// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
+// Reminder: Don't forget to deploy properly (JAWSDB_URL for Heroku)
 
 const Sequelize = require('sequelize');
 require('dotenv').config();

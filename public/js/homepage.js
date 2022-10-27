@@ -1,6 +1,6 @@
-// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project
-
-// Lesson learned from Tutoring / Office Hours - it's always best to use classes for repetitive forms/inputs/buttons without glitches; the below newCommentHandler took so many attempts until I received the proper guidance in Office Hours and Tutoring
+// Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
+// Lesson Learned in Office Hours: (1) Never forget event.preventDefault(); (2) console.logging is the quickest/most useful way to catch errors; (3) multiple Comment titles and inputs are allowed so using classes for them is appropriate (4) I'm not looking for comment.id but story.id and that story.id  established as story_id below is directly linked to data-id in handlebars for convenience
+// Lesson Learned in Tutoring: (1) Multiple buttons for comments demand .forEach 
 
 const newCommentHandler = async (event) => {
   event.preventDefault();
