@@ -43,10 +43,10 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 <img src="./Assets/login.png"/>
 
 * Creating, Updating and Deleting My Own Stories (Works with Live and Seeded Items)
-<img src="./Assets/codingstruggle.png"/>
+[TBD]
 
 * My Story by ID with Update Functionality (Works with Live and Seeded Items)
-<img src="./Assets/storybyid.png"/>
+[TBD]
 
 ## Deployed URL
 
