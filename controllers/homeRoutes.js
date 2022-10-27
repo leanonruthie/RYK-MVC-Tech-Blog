@@ -53,6 +53,30 @@ router.get('/story/:id', async (req, res) => {
   }
 });
 
+// router.put('/story/:id', async (req, res) => {
+//   try {
+//     const storyData = await Story.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//         {
+//           model: Comment,
+//         }
+//       ],
+//     });
+//     const story = storyData.get({ plain: true });
+
+//     res.render('story', {
+//       ...story,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
 router.get('/struggle', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {

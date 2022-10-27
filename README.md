@@ -46,7 +46,8 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 <img src="./Assets/mycodingstruggles.png"/>
 
 * My Story by ID with Update Functionality (Works with Live and Seeded Items)
-TBD
+<img src="./Assets/beforeupdate.png"/>
+<img src="./Assets/updated.png"/>
 
 ## Deployed URL
 

@@ -20,7 +20,7 @@ const updButtonHandler = async (event) => {
       });
       if (response.ok) {
         console.log("update working now!")
-        // document.location.replace(`/story/${id}`);
+        document.location.replace(`/story/${id}`);
       } else {
         alert('Failed to update your story!');
       }
