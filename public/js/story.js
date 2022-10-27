@@ -3,12 +3,12 @@
 
 const updButtonHandler = async (event) => {
     event.preventDefault();
-    if (event.target.hasAttribute('data-id')) {
-      console.log("event:", event);
+    console.log("event:", event);
       console.log("event.target:", event.target);
-      const name = document.querySelector("#update-title").value.trim();
-      const description = document.querySelector("#update-story").value.trim();
-      const story_id = document.getAttribute('data-id');
+    if (event.target.hasAttribute('data-id')) {
+      const name = event.target.querySelector("#update-title").value.trim();
+      const description = event.target.querySelector("#update-story").value.trim();
+      const story_id = event.target.getAttribute('data-id');
       console.log("name", name, "description", description, "story_id", story_id);
       const response = await fetch(`/api/stories/${story_id}`, {
         method: 'PUT',
