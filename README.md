@@ -37,7 +37,7 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 ## Screenshots
 
 * Homepage with Comment Functionality (Works with Live Items and Seeded Items)
-<img src="./Assets/home.png"/>
+[TBD]
 
 * Login | Signup (Works with Live and Seeded Items)
 <img src="./Assets/login.png"/>

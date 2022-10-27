@@ -1,5 +1,5 @@
 // Work reference: RUT-VIRT-FSF-PT-06-2022-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project and Previous Assignments
-// Lesson Learned - Update functionality was quite difficult mainly because I wanted to be clever and tried to use the mini-project data-id method. I went to tutoring so that my awesome tutor could point out that I continually made simply mistakes fetching and replacing incorrect routes - for further comments, see story.js in public and below router.put addition
+// Lesson Learned - Update functionality was quite difficult mainly because I wanted to be clever and tried to use the mini-project data-id method. I went to tutoring so that my awesome tutor could point out that I continually made simply mistakes fetching and replacing incorrect routes - for further comments, see story.js in public and below router.put
 
 const router = require('express').Router();
 const { Story } = require('../../models');
@@ -18,25 +18,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const updateStoryDataById = await Story.update({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (!updateStoryDataById) {
-      res.status(404).json({ message: 'No story found with this id!' });
-      return;
-    }
-
-    res.status(200).json(updateStoryDataById);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

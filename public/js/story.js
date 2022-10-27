@@ -8,9 +8,9 @@ const updButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const name = event.target.querySelector("#update-title").value.trim();
       const description = event.target.querySelector("#update-story").value.trim();
-      const story_id = event.target.getAttribute('data-id');
-      console.log("name", name, "description", description, "story_id", story_id);
-      const response = await fetch(`/api/stories/${story_id}`, {
+      const id = event.target.getAttribute('data-id');
+      console.log("id", id, "name", name, "description", description);
+      const response = await fetch(`/api/stories/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
           name,
@@ -19,7 +19,8 @@ const updButtonHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) {
-        document.location.replace(`/story/${story_id}`);
+        console.log("update working now!")
+        // document.location.replace(`/story/${id}`);
       } else {
         alert('Failed to update your story!');
       }
