@@ -36,17 +36,17 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 
 ## Screenshots
 
-* Homepage with Comment Functionality (Works with Live Items and Seeded Items)
-[TBD]
+* Homepage aka Others' Stories with Comment Functionality (Works with Live Items and Seeded Items)
+<img src="./Assets/home.png"/>
 
 * Login | Signup (Works with Live and Seeded Items)
 <img src="./Assets/login.png"/>
 
-* Creating, Updating and Deleting My Own Stories (Works with Live and Seeded Items)
-[TBD]
+* Create and Delete Functionality in My Coding Struggles (Works with Live and Seeded Items)
+<img src="./Assets/mycodingstruggles.png"/>
 
 * My Story by ID with Update Functionality (Works with Live and Seeded Items)
-[TBD]
+TBD
 
 ## Deployed URL
 
