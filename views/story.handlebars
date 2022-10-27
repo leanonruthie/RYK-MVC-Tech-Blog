@@ -6,7 +6,7 @@
     <p class="card-text fs-5 text-secondary">{{description}}</p>
   </div>
   <!-- This is how I want final-update-form to look like -->
-  <form id="final-update-form">
+  <form id="final-update-form"  data-id="{{story.id}}">
     <div class="card m-3 p-3 shadow-sm">
       <div class="card-body">
         <div class="mb-3">
@@ -20,7 +20,7 @@
           </label>
           <input type="text" class="form-control" id="update-story" placeholder="Update to this Story Here">
         </div>
-        <button class="bg-primary text-white" id="update-button" data-id="{{story.id}}">Update My Story</button>
+        <button class="bg-primary text-white" id="update-button">Update My Story</button>
       </div>
     </div>
   </form>
