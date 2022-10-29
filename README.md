@@ -52,4 +52,4 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 ## Deployed URL
 
 * https://github.com/leanonruthie/RYK-MVC-Tech-Blog.git
-* Heroku: https://protected-savannah-87652.herokuapp.com/
+* Heroku: https://mysterious-basin-98274.herokuapp.com/
