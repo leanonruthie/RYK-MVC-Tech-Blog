@@ -3,7 +3,7 @@
 
 const User = require('./User');
 const Story = require('./Story');
-const Comment = require('./Comment')
+const Comment = require('./comment')
 
 User.hasMany(Story, {
   foreignKey: 'user_id',
