@@ -51,5 +51,5 @@ Bootstrap inline-script utilized in handlebars to save time and convenience
 
 ## Deployed URL
 
-* [My GitHub](https://github.com/leanonruthie/RYK-MVC-Tech-Blog.git)
-* [My Heroku](https://mysterious-basin-98274.herokuapp.com/)
+* [GitHub Repository](https://github.com/leanonruthie/RYK-MVC-Tech-Blog.git)
+* [My Heroku App](https://mysterious-basin-98274.herokuapp.com/)
